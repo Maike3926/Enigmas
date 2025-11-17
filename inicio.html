@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./icon/abertura-da-porta-aberta.png" title="porta ícones">
+    <title>Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #030303;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .login {
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .login h2 {
+            font-size: 2em;
+            color: #ffffff;
+        }
+
+        .login p {
+            font-size: 0.8em;
+            color: #1b1b1b86;
+        }
+
+        .login .inputBx {
+            position: relative;
+            width: 100%;
+        }
+
+        .login .inputBx input {
+            position: relative;
+            width: 100%;
+            padding: 12px 20px;
+            background: transparent;
+            border: 2px solid #fcfcfc;
+            border-radius: 15px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .login .inputBx input[type="submit"] {
+            width: 100%;
+            background: #ff0000;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+
+<body onload="start()">
+    <div class="login">
+        <h2>Login</h2>
+        <p id="dica">Araneae...</p>
+        <div class="inputBx">
+            <input type="text" placeholder="Usuário" id="user" autocomplete="off" autofill="off" spellcheck="false">
+        </div>
+        <div class="inputBx">
+            <input type="password" placeholder="Senha" id="senha" autocomplete="off" autofill="off" spellcheck="false">
+        </div>
+        <div class="inputBx">
+            <input type="submit" value="Sign in" onclick="logar()">
+        </div>
+        <div>
+            <a>🤓</a>
+            <a>📸</a>
+            <a>🧗‍♂️</a>
+            <a>🕷️</a>
+        </div>
+
+        <script>
+            document.getElementById('senha').addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    logar();
+                }
+            });
+
+            document.getElementById('user').addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    logar();
+                }
+            })
+
+            function start() {
+                alert('Sim, roubei partes (muitas, quase todas na verdade, to aprendendo a mexer aqui ainda) do seu codigo, sim é tudo no diminutivo');
+            }
+
+
+            function logar() {
+                let user = document.getElementById('user');
+                let senha = document.getElementById('senha');
+                let dica = document.getElementById('dica');
+
+                if (user.value.length == 0) {
+                    alert('tente apertar espaço');
+                } else {
+                    dica.style.color = "white"
+                    if (user.value.toLowerCase() === "peter parker") {
+                        dica.style.color = "red"
+                        dica.innerHTML = "usuario correto";
+                        user.disabled = true;
+
+                        if (senha.value.length == 0) {
+                            alert('Então você ta me dizendo que peter parker é o');
+                        } else {
+                            if (senha.value.toLowerCase() === "homem aranha") {
+                                dica.innerHTML += ". Senha certa";
+                                setTimeout(() => {
+                                    window.location.href = "LL.html";
+                                }, 1000);
+                            } else if (senha.value.toLowerCase() === "homemaranha") {
+                                dica.innerHTML = "Esqueceu do espaço de novo?";
+                            } else {
+                                dica.innerHTML = "Senha errada. Não está nem perto.";
+                            }
+                        }
+                    } else {
+                        dica.innerHTML = "Usuário errado";
+                        let userLower = user.value.toLowerCase();
+                        if (userLower === "homem aranha") {
+                            dica.innerHTML += ". essa é a identidade secreta";
+                        } else if (userLower === "homemaranha") {
+                            dica.innerHTML += ". Tenta apertar espaço";
+                        } else if (userLower === "peter") {
+                            dica.innerHTML += ". Cade o sobre nome?";
+                        } else {
+                            dica.innerHTML += ". Vamo la tigrão você consegue";
+                        }
+                    }
+                }
+            }
+        </script>
+
+</body>
+
+</html>

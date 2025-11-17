@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./icon/pin.png" title="porta ícones">
+    <title>-11.4485981,-39.18744510000001</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #030303;
+            width: 100%;
+            overflow: hidden;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .enigma-img {
+            max-width: 90vw;
+            max-height: 70vh;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        p {
+            color: white;
+        }
+
+        #btn-dica {
+            position: fixed; 
+            bottom: 20px; 
+            left: 20px;     
+        }
+    </style>
+
+<body>
+    <img src="./img/23DBA191-6497-481A-A89D-FC1B7C5DD599-scaled.png" alt="Enigma" class="enigma-img">
+    <p>ivxl_aaaabc_atgclvlesca_</p>
+    <button type="button" class="btn btn-light" onclick="verificarResposta()">responda</button>
+    <button type="button" class="btn btn-light" id="btn-dica" onclick="mostrarDica()">Dica</button>
+
+    <script>
+        function verificarResposta() {
+            const respostaUsuario = prompt("Qual é a sua resposta?");
+
+            if (respostaUsuario) {
+                
+                if (respostaUsuario.trim() === "48730-000") {
+                    alert("ce é o bixao mesmo em doido");
+                    
+                    window.location.href = "atacante.html"; 
+                } else {
+                    if (respostaUsuario.toLowerCase().includes("salgadalia")) {
+                        alert("Sei que foi a primeira coisa que tentou ja que sou seu aluno favorito mas ja tentou decifrar o texto embaixo da imagem?");
+                    } else {
+                        alert("Resposta errada. Tente novamente! Lembre-se de usar todas as dicas disponíveis na página.");
+                    }
+                }
+            } else {
+                alert("Você não digitou uma resposta.");
+            }
+        }
+
+        function mostrarDica() {
+            alert("Matemática Antiga, Geografia Nacional, Astrologia,");
+        }
+    </script>
+
+
+
+</body>
+
+</html>
