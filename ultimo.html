@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./icon/vigenere.svg" title="porta ícones">
+    <title>6 romano genero italiano</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #030303;
+            width: 100%;
+            overflow: hidden;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #e0e0e0;
+            word-break: break-all;
+            text-align: center;
+        }
+
+        p {
+            color: white;
+            font-size: 0.9rem;
+            margin-top: -10px; 
+        }
+
+
+        #btn-dica {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+    </style>
+
+<body>
+    <h1> v5>$,48$#E-#3,-993{1 </h1>
+    <p>Seres antigos moram ali mesmo, buscando assustar invasores alheios.</p>
+    <div>
+        <button type="button" class="btn btn-light" onclick="verificarResposta()">responda</button>
+        <button type="button" class="btn btn-light" id="btn-dica" onclick="mostrarDica()">Dica</button>
+    </div>
+
+    <script>
+        let nivelDica = 0;
+
+        function verificarResposta() {
+            const respostaUsuario = prompt("Qual é a sua resposta?");
+
+            if (respostaUsuario) {
+
+                const respostaLower = respostaUsuario.toLowerCase().trim();
+
+                if (respostaLower === "Tartaruga de couro" || respostaLower === "Tartaruga-de-couro") {
+                    window.location.href = "https://www.youtube.com/watch?v=KUVvlqg1g5s";
+                } else if (respostaLower.includes("tartaruga")) {
+                    alert("É uma tartaruga, mas qual espécie?");
+                } else {
+                    alert("Resposta errada. Tente novamente!");
+                }
+
+            } else {
+                alert("Você não digitou uma resposta.");
+            }
+        }
+
+        function mostrarDica() {
+            if (nivelDica === 0) {
+                alert(" o código no centro da tela é uma cifra. o título da aba e o texto abaixo são pistas para decifrá-la.");
+                nivelDica++;
+            } else if (nivelDica === 1) {
+                alert(" O título '6 romano genero italiano' se traduz em 'VI' e 'genere'.");
+                nivelDica++;
+            } else {
+                alert("tente pegar a primeira letra de cada palavra");
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./icon/download.png" title="porta ícones">
-    <title>Dmitri Mendeleiev</title>
+        <link rel="shortcut icon" href="./icon/interrogação-280x300.webp" title="porta ícones">
+    <title>GOES</title>
 
     <style>
         * {
@@ -35,38 +35,52 @@
             color: white;
         }
 
+        .enigma-img {
+            max-width: 20vw;
+            max-height: 20vh;
+            height: auto;
+        }
 
-         #btn-dica {
-            position: fixed; 
-            bottom: 20px; 
-            left: 20px;     
+        #btn-dica {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
         }
     </style>
 
 <body>
-    <img src="./img/enigmatacante.jpg" alt="Enigma" class="enigma-img">
-    <p>#9 — #53 — #75</p>
+    <audio id="audiovitas" autoplay loop src="./sound/Vitas - Ah, ah, ah, ah... [h_FD2CnZkyM].mp3"></audio>
+    <img src="./img/vitas enigma.jpg" alt="Enigma" class="enigma-img">
+    <p>ó poderoso Zeus romano</p>
     <div>
         <button type="button" class="btn btn-light" onclick="verificarResposta()">responda</button>
         <button type="button" class="btn btn-light" id="btn-dica" onclick="mostrarDica()">Dica</button>
     </div>
 
-<script>
+    <script>
+        const audio = document.getElementById("audiovitas");
+        function ajustarVolume() {
+            audio.volume = 0.3;
+        }
+            audio.addEventListener("play", ajustarVolume);
+
+
+
         function verificarResposta() {
             const respostaUsuario = prompt("Qual é a sua resposta?");
 
             if (respostaUsuario) {
-                
-                if (respostaUsuario.trim() === "fire tornado") {
+
+                if (respostaUsuario.trim() === "ganimedes") {
                     alert("You're Goddamn Right");
-                    
-                    window.location.href = "energia.html"; 
+
+                    window.location.href = "ultimo.html";
                 } else {
                     const respostaLower = respostaUsuario.toLowerCase();
-                    if (respostaLower.includes("reif")) {
-                        alert("tente as primeiras letras de cada e ve se forma algo");
-                    } else if (respostaLower.includes("furacao de fogo")) {
-                        alert("tente em ingles");
+                    if (respostaLower.includes("vitas")) {
+                        alert("tente precurar a musica");
+                    } else if (respostaLower.includes("Jupter")) {
+                        alert("tente ler o nome do site");
                     } else {
                         alert("Resposta errada. Tente novamente! Lembre-se de usar todas as dicas disponíveis na página.");
                     }
@@ -77,8 +91,8 @@
         }
 
         function mostrarDica() {
-            alert("O núcleo de sua força é instável. Para ativá-la, é necessário submeter os elementos 9, 53 e 75 a um vórtice de alta rotação.");
-            window.open("https://www.youtube.com/watch?v=615U7p3ttE4", "_blank");
+            alert("O nome da musica é crucial");
+            window.open("https://www.youtube.com/watch?v=989-7xsRLR4", "_blank");
         }
     </script>
 
